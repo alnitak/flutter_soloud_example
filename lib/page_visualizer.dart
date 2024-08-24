@@ -19,23 +19,6 @@ class _PageVisualizerState extends State<PageVisualizer> {
   static final Logger _log = Logger('_PageVisualizerState');
 
   String shader = 'assets/shaders/test9.frag';
-  final regExp = RegExp('_(s[w|i].*)_-');
-  final List<String> audioChecks = [
-    'assets/audio/audiocheck.net_sweep_20Hz_20000Hz_-3dBFS_4s_logarithmic.wav',
-    'assets/audio/audiocheck.net_sin_8000Hz_48000_-3dBFS_3s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_16Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_31.5Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_63Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_125Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_250Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_500Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_1000Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_2000Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_4000Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_8000Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_16000Hz_-3dBFS_2s.wav',
-    'assets/audio/12Bands/audiocheck.net_sin_20000Hz_-3dBFS_2s.wav',
-  ];
   late final ValueNotifier<GetSamplesKind> samplesKind;
   final ValueNotifier<double> fftSmoothing = ValueNotifier(0.8);
   final ValueNotifier<bool> isVisualizerEnabled = ValueNotifier(true);
@@ -118,16 +101,6 @@ class _PageVisualizerState extends State<PageVisualizer> {
                       },
                       label: const Text('X trackTure'),
                     ),
-                    for (int i = 0; i < audioChecks.length; i++)
-                      ActionChip(
-                        backgroundColor: Colors.blue,
-                        onPressed: () {
-                          playAsset(audioChecks[i]);
-                        },
-                        label: Text(
-                          regExp.firstMatch(audioChecks[i])?.group(1) ?? '',
-                        ),
-                      ),
                   ],
                   child: const Chip(
                     label: Text('samples'),
