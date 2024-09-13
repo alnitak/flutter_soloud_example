@@ -198,7 +198,7 @@ class _VisualizerState extends State<Visualizer> with TickerProviderStateMixin {
           return const Placeholder(
             color: Colors.red,
             strokeWidth: 0.5,
-            child: Text("\n  can't get audio samples  \n"),
+            child: Text("\n  please, select an audio sample  \n"),
           );
         }
 

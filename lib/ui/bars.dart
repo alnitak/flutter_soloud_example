@@ -6,7 +6,6 @@ import 'package:flutter_soloud_example/visualizer/bars_wave_widget.dart';
 
 /// Visualizer for FFT and wave data
 class Bars extends StatefulWidget {
-  /// If true get audio data from the player else from the mic
 
   const Bars({super.key});
 
