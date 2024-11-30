@@ -208,7 +208,7 @@ class _PageWaveformState extends State<PageWaveform> {
             ),
 
             DefaultTabController(
-              length: 12,
+              length: 14,
               initialIndex: 2,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -229,6 +229,8 @@ class _PageWaveformState extends State<PageWaveform> {
                       Tab(text: 'Wave shaper'),
                       Tab(text: 'Robotize'),
                       Tab(text: 'Freeverb'),
+                      Tab(text: 'Limiter'),
+                      Tab(text: 'Compressor'),
                     ],
                   ),
                   const SizedBox(height: 8),
@@ -297,6 +299,12 @@ class _PageWaveformState extends State<PageWaveform> {
 
                         /// Freeverb
                         const FilterFx(filterType: FilterType.freeverbFilter),
+
+                        /// Limiter
+                        const FilterFx(filterType: FilterType.limiterFilter),
+
+                        /// Compressor
+                        const FilterFx(filterType: FilterType.compressorFilter),
                       ],
                     ),
                   ),

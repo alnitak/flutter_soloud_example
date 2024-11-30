@@ -55,6 +55,12 @@ class _FilterFxState extends State<FilterFx> {
       case FilterType.freeverbFilter:
         params = List.from(fxFreeverb.defs);
         fxParams = fxFreeverb;
+      case FilterType.limiterFilter:
+        params = List.from(fxLimiter.defs);
+        fxParams = fxLimiter;
+      case FilterType.compressorFilter:
+        params = List.from(fxCompressor.defs);
+        fxParams = fxCompressor;
     }
   }
 
